@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    public Animator animator;
+    public SpriteRenderer sprite;
+
     private Rigidbody2D rb;
     private Vector2 movement;
     public bool isGrounded;
@@ -17,11 +20,11 @@ public class PlayerController : MonoBehaviour {
 
     public bool isActive = true;
 
-    void Start() {
+    void Start () {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update() {
+    void Update () {
         if (!isActive) {
             return;
         }
@@ -30,8 +33,16 @@ public class PlayerController : MonoBehaviour {
         Jumping();
     }
 
-    void Walking() {
+    void Walking () {
         movement.x = Input.GetAxis("Horizontal");
+
+        if (movement.x < 0f) {
+            sprite.flipX = true;
+        } else if (movement.x > 0f) {
+            sprite.flipX = false;
+        }
+
+        animator.SetFloat("Speed", Math.Abs(movement.x));
 
         if (Math.Abs(rb.velocity.x) > speed) {
             return;
@@ -39,7 +50,7 @@ public class PlayerController : MonoBehaviour {
         rb.AddForce(movement * acceleration * Time.deltaTime);
     }
 
-    void Jumping() {
+    void Jumping () {
         jumpInput = Input.GetAxis("Jump");
 
         if (jumpInput == 0f) {
@@ -49,14 +60,21 @@ public class PlayerController : MonoBehaviour {
             return;
         }
 
+        animator.SetBool("IsJumping", true);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
         isGrounded = false;
     }
 
+    void OnLanding () {
+        isGrounded = true;
+        animator.SetBool("IsJumping", false);
+    }
+
     void OnCollisionStay2D (Collision2D other) {
+
         if (other.gameObject.tag == "Ground") {
-            isGrounded = true;
+            OnLanding();
         }
 
     }

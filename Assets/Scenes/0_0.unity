@@ -1065,6 +1065,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037927306}
   m_CullTransparentMesh: 1
+--- !u!95 &1057088870 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8219711840383739702, guid: 5542bbce340604315a498327d735abf9, type: 3}
+  m_PrefabInstance: {fileID: 5466759874270239479}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1244654476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2515,6 +2520,10 @@ PrefabInstance:
       value: Actor
       objectReference: {fileID: 0}
     - target: {fileID: 4151282187583868976, guid: 8e51b401e876a20fc894cd8d98c0f650, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151282187583868976, guid: 8e51b401e876a20fc894cd8d98c0f650, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -2578,14 +2587,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224147729727613564, guid: 5542bbce340604315a498327d735abf9, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3635831963722952827, guid: 5542bbce340604315a498327d735abf9, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833480921394055203, guid: 5542bbce340604315a498327d735abf9, type: 3}
+      propertyPath: m_Size.x
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833480921394055203, guid: 5542bbce340604315a498327d735abf9, type: 3}
+      propertyPath: m_Size.y
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833480921394055203, guid: 5542bbce340604315a498327d735abf9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -331049751, guid: a142515855e1c335c82c7f9efa551538, type: 3}
+    - target: {fileID: 3833480921394055203, guid: 5542bbce340604315a498327d735abf9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4045335798194701154, guid: 5542bbce340604315a498327d735abf9, type: 3}
       propertyPath: speed
       value: 52.35
       objectReference: {fileID: 0}
+    - target: {fileID: 4620427877347156214, guid: 5542bbce340604315a498327d735abf9, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1057088870}
     - target: {fileID: 8171283703588449477, guid: 5542bbce340604315a498327d735abf9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
