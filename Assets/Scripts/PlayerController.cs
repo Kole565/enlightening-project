@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour {
     public float jumpForce = 1f;
 
     public bool isActive = true;
+    public bool isCanJump = true;
+    public bool isFacingLeft = false;
 
     void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -30,19 +32,23 @@ public class PlayerController : MonoBehaviour {
         }
 
         Walking();
-        Jumping();
+
+        if (isCanJump) {
+            Jumping();
+        }
     }
 
     void Walking () {
         movement.x = Input.GetAxis("Horizontal");
 
         if (movement.x < 0f) {
-            sprite.flipX = true;
+            isFacingLeft = true;
         } else if (movement.x > 0f) {
-            sprite.flipX = false;
+            isFacingLeft = false;
         }
 
         animator.SetFloat("Speed", Math.Abs(movement.x));
+        animator.SetBool("FacingLeft", isFacingLeft);
 
         if (Math.Abs(rb.velocity.x) > speed) {
             return;
