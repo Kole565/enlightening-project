@@ -45,7 +45,7 @@ public class TransitionController : MonoBehaviour {
         yield return null;
     }
 
-    IEnumerator StartTransitionTextCoroutine () {
+    public IEnumerator StartTransitionTextCoroutine () {
         if (startTransitionText.Count > 0) {
             yield return DisplayText(startTransitionText);
         }
