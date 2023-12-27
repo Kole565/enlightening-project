@@ -16,4 +16,5 @@ public class CameraController : MonoBehaviour {
     void Update () {
         camera.orthographicSize = zoom;
     }
+
 }

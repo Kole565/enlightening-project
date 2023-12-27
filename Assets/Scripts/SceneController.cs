@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
 
-    private TransitionController transitionController;
-    [SerializeField]
-    private PlayerController playerController;
+    [SerializeField] private TransitionController transitionController;
+    [SerializeField] private PlayerController playerController;
 
     [SerializeField]
     private bool isCutScene;
@@ -17,7 +16,7 @@ public class SceneController : MonoBehaviour {
 
 
     void Start () {
-        transitionController = GetComponent<TransitionController>();
+        // transitionController = GetComponent<TransitionController>();
 
         if (isCutScene) {
             StartCoroutine(LoadCutScene());
@@ -46,6 +45,16 @@ public class SceneController : MonoBehaviour {
     public IEnumerator LoadNextScene () {
         yield return transitionController.EndTransitionCoroutine();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public IEnumerator LoadScene (Scene scene) {
+        yield return transitionController.EndTransitionCoroutine();
+        SceneManager.LoadScene(scene.buildIndex);
+    }
+
+    public IEnumerator LoadScene (int buildIndex) {
+        yield return transitionController.EndTransitionCoroutine();
+        SceneManager.LoadScene(buildIndex);
     }
 
 }
