@@ -318,11 +318,27 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 500595647}
-    m_RemovedComponents: []
+    - target: {fileID: 7789001379222622015, guid: 04738c0388dc2f7c9bb772feee8cc226, type: 3}
+      propertyPath: transitionController
+      value: 
+      objectReference: {fileID: 395490808}
+    m_RemovedComponents:
+    - {fileID: 5264973811325142445, guid: 04738c0388dc2f7c9bb772feee8cc226, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04738c0388dc2f7c9bb772feee8cc226, type: 3}
+--- !u!114 &395490808 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4458215850990122053, guid: 04738c0388dc2f7c9bb772feee8cc226, type: 3}
+  m_PrefabInstance: {fileID: 395490807}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aace6a23800d78a58e85b37aa7f3a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &500595646
 PrefabInstance:
   m_ObjectHideFlags: 0
