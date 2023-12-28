@@ -10,11 +10,12 @@ public class PhotoesView : MonoBehaviour {
     [SerializeField] private Image activeImage;
     [SerializeField] private GameObject imagesPanel;
 
+    [SerializeField] private SceneController sceneController;
+
     private int index = 0;
 
 
     public void Start () {
-        // imagesPanel.SetActive(true);
         Display();
     }
 
@@ -26,6 +27,7 @@ public class PhotoesView : MonoBehaviour {
 
         if (index >= photoes.Length) {
             End();
+            return;
         }
 
         activeImage.sprite = photoes[index];
@@ -33,6 +35,7 @@ public class PhotoesView : MonoBehaviour {
 
     void End () {
         imagesPanel.SetActive(false);
+        StartCoroutine(sceneController.LoadNextScene());
     }
 
     public void DisplayNext () {

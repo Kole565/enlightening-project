@@ -740,7 +740,7 @@ PrefabInstance:
       objectReference: {fileID: 253806185, guid: 5c4cff0131e359a339b42227faf3813b, type: 3}
     - target: {fileID: 3833480921394055203, guid: 5542bbce340604315a498327d735abf9, type: 3}
       propertyPath: m_SortingOrder
-      value: 16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620427877347156214, guid: 5542bbce340604315a498327d735abf9, type: 3}
       propertyPath: animator
@@ -752,7 +752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8171283703588449477, guid: 5542bbce340604315a498327d735abf9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 8171283703588449477, guid: 5542bbce340604315a498327d735abf9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1326,10 +1326,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 860889440}
   - {fileID: 75632448}
   - {fileID: 1871259601}
   - {fileID: 1031933509}
-  - {fileID: 860889440}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1632,9 +1632,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1111824038}
+  - {fileID: 1676484233}
   - {fileID: 265329093}
   - {fileID: 1184199531}
-  - {fileID: 1676484233}
   m_Father: {fileID: 972776590}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2225,6 +2225,7 @@ GameObject:
   - component: {fileID: 1506051330}
   - component: {fileID: 1506051331}
   - component: {fileID: 1506051332}
+  - component: {fileID: 1506051333}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -2281,6 +2282,7 @@ MonoBehaviour:
   - {fileID: 1652529326, guid: 7ec93801572016372b2a492ef10ce08a, type: 3}
   activeImage: {fileID: 1676484234}
   imagesPanel: {fileID: 1031933508}
+  sceneController: {fileID: 1506051333}
 --- !u!114 &1506051332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2300,6 +2302,22 @@ MonoBehaviour:
   transitionTextField: {fileID: 860889441}
   sentenceInterval: 0
   darkPanel: {fileID: 860889442}
+--- !u!114 &1506051333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506051326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 636638f6d33f4977eab939e2b235bb0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionController: {fileID: 1506051332}
+  playerController: {fileID: 2146859822}
+  isCutScene: 0
+  cutSceneDuration: 0
 --- !u!1001 &1525881002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2477,16 +2495,32 @@ PrefabInstance:
       value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 1025052259456152386, guid: b205052cdb112ba3b8e0ea6b396683ea, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025052259456152386, guid: b205052cdb112ba3b8e0ea6b396683ea, type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025052259456152386, guid: b205052cdb112ba3b8e0ea6b396683ea, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1039123331
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094387910272758221, guid: b205052cdb112ba3b8e0ea6b396683ea, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1094387910272758221, guid: b205052cdb112ba3b8e0ea6b396683ea, type: 3}
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1094387910272758221, guid: b205052cdb112ba3b8e0ea6b396683ea, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1039123331
+      objectReference: {fileID: 0}
     - target: {fileID: 3533210358024559856, guid: b205052cdb112ba3b8e0ea6b396683ea, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3906997383637114901, guid: b205052cdb112ba3b8e0ea6b396683ea, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2561,8 +2595,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8267776369449106788, guid: b205052cdb112ba3b8e0ea6b396683ea, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8267776369449106788, guid: b205052cdb112ba3b8e0ea6b396683ea, type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8267776369449106788, guid: b205052cdb112ba3b8e0ea6b396683ea, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1039123331
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
