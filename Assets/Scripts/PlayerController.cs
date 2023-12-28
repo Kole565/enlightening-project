@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour {
 
     void Update () {
         if (!isActive) {
+            animator.SetFloat("Speed", rb.velocity.magnitude);
             return;
         }
 

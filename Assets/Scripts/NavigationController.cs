@@ -59,7 +59,7 @@ public class NavigationController : MonoBehaviour {
 
     void MarkerUpdate () {
         if (aimWaypointIndex >= waypoints.Length) {
-            StartCoroutine(missionController.LoadNextScene());
+            End();
             return;
         }
 
@@ -68,7 +68,7 @@ public class NavigationController : MonoBehaviour {
         }
 
         if (aimWaypointIndex >= waypoints.Length) {
-            StartCoroutine(missionController.LoadNextScene());
+            End();
             return;
         }
 
@@ -78,6 +78,11 @@ public class NavigationController : MonoBehaviour {
         direction *= markerSpeed;
 
         marker.anchoredPosition += direction * Time.deltaTime;
+    }
+
+    void End () {
+        StartCoroutine(missionController.LoadNextScene());
+        navigationMenu.SetActive(false);
     }
 
     public void StartNavigation () {
