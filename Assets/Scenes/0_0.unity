@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "\u0421\u044D\u043C \u0412\u0438\u0438\u043B\u043A\u0438\u043D\u0441"
+    name: "\u041C\u043E\u0440\u044F\u043A"
     sentences:
     - "\"\u041D\u043E\u0432\u0430\u044F \u043D\u0430\u0434\u0435\u0436\u0434\u0430\"
       \u0441\u043A\u043E\u0440\u043E \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u044F\u0435\u0442\u0441\u044F.
@@ -692,6 +692,27 @@ MonoBehaviour:
     - "\u0417\u0434\u0440\u0430\u0432\u0438\u044F \u0436\u0435\u043B\u0430\u044E,
       \u043C\u0438\u0441\u0442\u0435\u0440 \u0423\u0438\u043B\u043B\u043E\u0443\u0431\u0438!"
   dialogueManager: {fileID: 2079896237}
+--- !u!95 &839143595
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839143590}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 529362ab3f8c94508a8acc91126f3bb4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &846771924
 GameObject:
   m_ObjectHideFlags: 0
@@ -2486,9 +2507,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 466903988846222978, guid: 8e51b401e876a20fc894cd8d98c0f650, type: 3}
+      propertyPath: m_Offset.x
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4151282187583868976, guid: 8e51b401e876a20fc894cd8d98c0f650, type: 3}
       propertyPath: m_Name
-      value: Actor
+      value: Marine
       objectReference: {fileID: 0}
     - target: {fileID: 4151282187583868976, guid: 8e51b401e876a20fc894cd8d98c0f650, type: 3}
       propertyPath: m_IsActive
@@ -2499,8 +2524,24 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8030672333614294654, guid: 8e51b401e876a20fc894cd8d98c0f650, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1927735273, guid: ffcaeaac35e23fc8ea67094aeb9001f1, type: 3}
+    - target: {fileID: 8030672333614294654, guid: 8e51b401e876a20fc894cd8d98c0f650, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030672333614294654, guid: 8e51b401e876a20fc894cd8d98c0f650, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030672333614294654, guid: 8e51b401e876a20fc894cd8d98c0f650, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030672333614294654, guid: 8e51b401e876a20fc894cd8d98c0f650, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8835547297040095033, guid: 8e51b401e876a20fc894cd8d98c0f650, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2549,6 +2590,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4151282187583868976, guid: 8e51b401e876a20fc894cd8d98c0f650, type: 3}
       insertIndex: 2
       addedObject: {fileID: 839143594}
+    - targetCorrespondingSourceObject: {fileID: 4151282187583868976, guid: 8e51b401e876a20fc894cd8d98c0f650, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 839143595}
   m_SourcePrefab: {fileID: 100100000, guid: 8e51b401e876a20fc894cd8d98c0f650, type: 3}
 --- !u!1001 &5466759874270239479
 PrefabInstance:
@@ -2580,7 +2624,7 @@ PrefabInstance:
       objectReference: {fileID: 1707524806, guid: b4d2f2d00c0af047ab03a9162a95a296, type: 3}
     - target: {fileID: 3833480921394055203, guid: 5542bbce340604315a498327d735abf9, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3833480921394055203, guid: 5542bbce340604315a498327d735abf9, type: 3}
       propertyPath: m_WasSpriteAssigned

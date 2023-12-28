@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour {
             isFacingLeft = false;
         }
 
-        animator.SetFloat("Speed", Math.Abs(movement.x));
+        animator.SetFloat("Speed", rb.velocity.magnitude);
         animator.SetBool("FacingLeft", isFacingLeft);
 
         if (Math.Abs(rb.velocity.x) > speed) {

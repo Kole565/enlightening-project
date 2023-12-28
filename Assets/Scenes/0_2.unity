@@ -300,7 +300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4458215850990122053, guid: 04738c0388dc2f7c9bb772feee8cc226, type: 3}
       propertyPath: endTransitionText.Array.data[0]
-      value: The End
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5264973811325142445, guid: 04738c0388dc2f7c9bb772feee8cc226, type: 3}
       propertyPath: m_Enabled
