@@ -13,7 +13,7 @@ public class StarsMinigameController : MonoBehaviour {
     [SerializeField]
     private GameObject menu;
     [SerializeField]
-    private SpriteRenderer menuTrigger;
+    private GameObject menuTrigger;
     [SerializeField]
     private RectTransform stars;
     [SerializeField]
@@ -64,9 +64,10 @@ public class StarsMinigameController : MonoBehaviour {
 
     IEnumerator Disappear () {
         for (float t = 1f; t > 0f; t -= (float) 1/128) {
-            menuTrigger.color = new Color(0f, 0f, 0f, t);
+            menuTrigger.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, t);
             yield return null;
         }
+        menuTrigger.SetActive(false);
     }
 
     bool CheckSolution (Vector2 scale, float rotation) {
