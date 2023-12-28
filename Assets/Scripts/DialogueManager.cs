@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour {
     private GameObject dialoguePanel;
 
     private Queue<string> sentences;
+    [SerializeField] private PlayerController player;
 
     void Start() {
         sentences = new Queue<string>();
@@ -20,15 +21,15 @@ public class DialogueManager : MonoBehaviour {
     }
 
     public void StartDialogue (Dialogue dialogue) {
+        player.isActive = false;
+
         dialoguePanel.SetActive(true);
-        Debug.Log("Dialogue start");
         nameText.text = dialogue.name;
 
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences) {
             sentences.Enqueue(sentence);
-            // Debug.Log(sentence);
         }
 
         DisplayNextSentence();
@@ -46,7 +47,7 @@ public class DialogueManager : MonoBehaviour {
     }
 
     void EndDialogue () {
-        Debug.Log("Dialogue End");
+        player.isActive = true;
 
         dialoguePanel.SetActive(false);
     }
